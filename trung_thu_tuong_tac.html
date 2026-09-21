@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Trung Thu gửi em 🌙</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+body{background:#050617;color:white}
+.page{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hidden{display:none!important}
+.cover{
+ background:
+ radial-gradient(circle at 75% 18%,#fff4b8 0 4%,#ffd977 4.5% 6%,transparent 7%),
+ linear-gradient(#7c0710 0%,#b91616 48%,#d66d21 72%,#7b4b18 100%);
+}
+.cover:before{content:"";position:absolute;inset:0;background:
+ radial-gradient(circle at 12% 18%,#ffd77a 0 2px,transparent 3px),
+ radial-gradient(circle at 32% 10%,#fff3ad 0 2px,transparent 3px),
+ radial-gradient(circle at 58% 24%,#ffd77a 0 2px,transparent 3px),
+ radial-gradient(circle at 88% 30%,#fff 0 2px,transparent 3px);
+background-size:180px 150px;opacity:.9}
+.field{position:absolute;bottom:-8%;width:120%;height:42%;left:-10%;background:
+ repeating-linear-gradient(80deg,transparent 0 12px,#725b19 13px 15px),
+ linear-gradient(#9a6c20,#d19a2e);transform:skewY(-3deg);opacity:.95}
+.moon{position:absolute;top:9%;right:12%;width:92px;height:92px;border-radius:50%;background:#fff0a5;box-shadow:0 0 35px #ffe78a}
+.lantern{position:absolute;width:38px;height:52px;border-radius:45% 45% 40% 40%;background:#ffad42;box-shadow:0 0 20px #ffb84d;animation:float 4s ease-in-out infinite}
+.lantern:before,.lantern:after{content:"";position:absolute;left:50%;transform:translateX(-50%);width:52px;height:3px;background:#ffd16b}
+.lantern:before{top:-7px}.lantern:after{bottom:-8px}
+.l1{left:10%;top:18%}.l2{left:25%;top:30%;transform:scale(.72);animation-delay:1s}.l3{right:18%;top:34%;transform:scale(.8);animation-delay:2s}
+@keyframes float{50%{transform:translateY(-12px)}}
+.coverTitle{position:absolute;top:25%;text-align:center;font-size:clamp(28px,8vw,52px);font-weight:800;text-shadow:0 4px 20px #7c0710}
+.openBtn,.letterBtn{border:0;color:white;font-weight:800;font-size:18px;padding:15px 28px;border-radius:999px;background:linear-gradient(135deg,#ffcf61,#ff6b5e);box-shadow:0 0 28px #ff9b5c;cursor:pointer;position:absolute;bottom:18%;animation:appear 3s ease both}
+@keyframes appear{from{opacity:0;transform:translateY(20px) scale(.9)}to{opacity:1;transform:none}}
+.night{background:
+ radial-gradient(ellipse at 50% 25%,rgba(95,78,190,.35),transparent 35%),
+ radial-gradient(ellipse at 60% 42%,rgba(29,132,170,.2),transparent 38%),
+ #030514}
+.night:before{content:"";position:absolute;inset:0;background-image:
+ radial-gradient(circle,#fff 0 1px,transparent 1.7px),
+ radial-gradient(circle,#ffd66b 0 1px,transparent 1.8px);
+background-size:67px 71px,113px 97px;opacity:.85}
+.milky{position:absolute;width:150%;height:42%;top:5%;left:-25%;background:linear-gradient(110deg,transparent 10%,rgba(180,160,255,.08),rgba(255,255,255,.18),rgba(80,160,255,.08),transparent 90%);filter:blur(20px);transform:rotate(-17deg)}
+.words{position:absolute;inset:0;overflow:hidden;perspective:900px}
+.word{position:absolute;bottom:-12%;white-space:nowrap;font-size:clamp(20px,6vw,40px);font-weight:800;color:#ffb7e8;text-shadow:0 0 15px #ff5fc7,0 4px 10px #000;animation:rise linear forwards;transform-style:preserve-3d}
+@keyframes rise{0%{transform:translate3d(0,20vh,0) rotateY(0deg) rotateZ(0deg);opacity:0}8%{opacity:1}45%{transform:translate3d(var(--x),-45vh,80px) rotateY(var(--ry)) rotateZ(var(--rz))}80%{transform:translate3d(calc(var(--x)*-1),-95vh,10px) rotateY(calc(var(--ry)*-1)) rotateZ(calc(var(--rz)*-1));opacity:1}100%{transform:translate3d(var(--x),-125vh,0) rotateY(var(--ry)) rotateZ(var(--rz));opacity:0}}
+.letterBtn{bottom:10%;animation:appear 3s ease both;z-index:5}
+.letterWrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px}
+.letter{width:min(88vw,520px);max-height:78vh;overflow:auto;padding:35px 25px 30px;border-radius:8px;background:linear-gradient(135deg,#fff1c7,#e6c88e);color:#633c2c;box-shadow:0 0 50px rgba(255,220,150,.35);transform:scaleY(.05) rotateX(75deg);transform-origin:top;opacity:0}
+.letter.open{animation:openLetter 2.8s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes openLetter{to{transform:scaleY(1) rotateX(0);opacity:1}}
+.letter h2{text-align:center;margin:0 0 18px;font-size:30px}.letter p{font-size:17px;line-height:1.75;margin:10px 0}.sign{text-align:center;font-weight:800;font-size:19px;margin-top:18px}
+.fade{animation:fade .9s ease forwards}@keyframes fade{to{opacity:0}}
+</style>
+</head>
+<body>
+<section id="cover" class="page cover">
+ <div class="field"></div><div class="moon"></div>
+ <div class="lantern l1"></div><div class="lantern l2"></div><div class="lantern l3"></div>
+ <div class="coverTitle">🌙 Tết Trung Thu<br>gửi em ❤️</div>
+ <button id="openBtn" class="openBtn">Nhấn để mở ✨</button>
+</section>
+
+<section id="night" class="page night hidden">
+ <div class="milky"></div><div id="words" class="words"></div>
+ <button id="letterBtn" class="letterBtn hidden">Mở thư 💌</button>
+ <div id="letterWrap" class="letterWrap hidden">
+  <article id="letter" class="letter">
+   <h2>Gửi em ❤️</h2>
+   <p>Trung Thu năm nay, anh không thể ở bên em như anh muốn, nhưng trái tim anh vẫn luôn hướng về em.</p>
+   <p>Cảm ơn em vì đã xuất hiện, làm thế giới của anh trở nên thật đặc biệt. Dù ở gần hay xa, anh vẫn mong em luôn vui vẻ và có thật nhiều điều dễ thương trong cuộc sống.</p>
+   <p>Anh chúc em một mùa Trung Thu thật ấm áp, luôn mạnh khỏe, luôn cười thật nhiều và luôn nhớ rằng có một người rất thương em.</p>
+   <p>Chúc cho những ngày sắp tới của chúng mình vẫn có thật nhiều kỷ niệm đẹp, nhiều tiếng cười và những điều bình yên.</p>
+   <div class="sign">Ah iu em nhiều lắm ❤️<br>🌙 Happy Mid-Autumn 🌙</div>
+  </article>
+ </div>
+</section>
+
+<script>
+const cover=document.getElementById('cover'), night=document.getElementById('night');
+const openBtn=document.getElementById('openBtn'), words=document.getElementById('words'), letterBtn=document.getElementById('letterBtn');
+const letterWrap=document.getElementById('letterWrap'), letter=document.getElementById('letter');
+
+openBtn.addEventListener('click',()=>{
+  openBtn.disabled=true;
+  cover.classList.add('fade');
+  setTimeout(()=>{cover.classList.add('hidden');night.classList.remove('hidden');startWords()},900);
+});
+const phrases=["Ah iu em ❤️","Ah thw em nhất ❤️","Cdag nhỏ iu ❤️","Thương em nhiều lắm ❤️","Em là người đặc biệt của ah ❤️","Nhớ em ❤️","Luôn mong em vui ❤️","Ah vẫn ở đây ❤️","Cdag nhỏ của ah ❤️","Iu em nhất 🌙"];
+function startWords(){
+  let count=0,total=150;
+  const timer=setInterval(()=>{
+    if(count>=total){clearInterval(timer);setTimeout(()=>letterBtn.classList.remove('hidden'),800);return}
+    const e=document.createElement('div');e.className='word';
+    e.textContent=phrases[Math.floor(Math.random()*phrases.length)];
+    e.style.left=(Math.random()*82+4)+'%';
+    e.style.setProperty('--x',(Math.random()*170-85)+'px');
+    e.style.setProperty('--ry',(Math.random()*70-35)+'deg');
+    e.style.setProperty('--rz',(Math.random()*20-10)+'deg');
+    e.style.animationDuration=(5+Math.random()*5)+'s';
+    words.appendChild(e);
+    setTimeout(()=>e.remove(),10500);
+    count++;
+  },75);
+}
+letterBtn.addEventListener('click',()=>{
+ letterBtn.classList.add('hidden');letterWrap.classList.remove('hidden');
+ requestAnimationFrame(()=>letter.classList.add('open'));
+});
+</script>
+</body>
+</html>
